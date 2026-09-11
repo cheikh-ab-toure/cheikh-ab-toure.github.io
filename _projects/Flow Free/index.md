@@ -33,3 +33,14 @@ To train a model, we needed structured data extracted from puzzle images:
 - The result is compiled into a matrix representing the board's colors and states
   
 {% include image-gallery.html images="extraction-pipeline-flowchart.png" height="450" %}
+
+We also generated a synthetic dataset rather than manually collecting and labeling puzzle images — since these boards are generated in code, their solutions are already known, making them ideal for supervised learning. Applying variations in brightness and scaling further increased performance.
+
+---
+# Solving with ML
+The model is a Convolutional Neural Network (CNN), which uses a series of layers to extract key features from the input board, then classifies the puzzle based on those features. Once trained, it uses the extracted features to solve an unfinished puzzle.
+
+Conversion to TensorFlow-compatible input:
+- The board is converted from a NumPy integer array to a float32 tensor
+- Reshaped to (1, 5, 5, 1) to match batch and channel dimensions
+- This tensor is the critical link between the OpenCV extraction pipeline and the TensorFlow model
