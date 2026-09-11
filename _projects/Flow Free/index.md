@@ -1,9 +1,11 @@
 ---
 layout: post
-title: project title
+title: Investigating the Use of Machine Learning Algorithms to Solve Flow Free Puzzles
 description:  short description of the project
 skills: 
-- skill 1
-- skill 2
+- Python
+- OpenCV
+- TensorFlow
+- NumPy
 main-image: /project.webp 
 ---
