@@ -23,3 +23,13 @@ Before turning to machine learning, we looked at three algorithmic approaches:
 - Constraint Satisfaction & Backtracking — apply constraints, eliminate invalid moves, build a solution from remaining valid paths.
 - Trial and Error Pathfinding — treat the puzzle like a maze, solving one color at a time, backing up whenever a path breaks a rule.
 - SAT Solver — convert the puzzle into Boolean logic constraints, represent solutions as true/false combinations, and search for a satisfying assignment.
+
+---
+# Extracting Data with OpenCV
+To train a model, we needed structured data extracted from puzzle images:
+- OpenCV interprets images by detecting patterns, shapes, and colors, converting a screenshot into structured data for the model
+- The board is isolated by detecting edges and contours, then divided into equal cells based on its dimensions
+- Each cell is converted to HSV color space and classified as an endpoint, a path, or empty
+- The result is compiled into a matrix representing the board's colors and states
+  
+{% include image-gallery.html images="extraction-pipeline-flowchart.png" height="450" %}
