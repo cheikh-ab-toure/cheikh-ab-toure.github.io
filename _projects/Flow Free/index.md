@@ -16,7 +16,6 @@ Routing is the process of selecting a path that connects two points while satisf
 
 As puzzle size increases, the computational complexity needed to solve it grows sharply. Traditional solvers struggle to keep up, so this research explores machine learning as an alternative approach — training a model to solve Flow Free automatically. I worked on this as part of a 7-member research team advised by Dr. Daniel Limbrick in the ADEPT Lab at NC A&T.
 
----
 # How to Solve Flow Free
 In Flow Free, the goal is to connect matching colored dots with continuous paths without violating game constraints. Multi-colored dot pairs are randomly placed on a 5x5 grid; connecting one pair incorrectly can block other paths and make the puzzle unsolvable.
 Before turning to machine learning, we looked at three algorithmic approaches:
@@ -24,7 +23,6 @@ Before turning to machine learning, we looked at three algorithmic approaches:
 - Trial and Error Pathfinding — treat the puzzle like a maze, solving one color at a time, backing up whenever a path breaks a rule.
 - SAT Solver — convert the puzzle into Boolean logic constraints, represent solutions as true/false combinations, and search for a satisfying assignment.
 
----
 # Extracting Data with OpenCV
 To train a model, we needed structured data extracted from puzzle images:
 - OpenCV interprets images by detecting patterns, shapes, and colors, converting a screenshot into structured data for the model
@@ -32,15 +30,20 @@ To train a model, we needed structured data extracted from puzzle images:
 - Each cell is converted to HSV color space and classified as an endpoint, a path, or empty
 - The result is compiled into a matrix representing the board's colors and states
   
-{% include image-gallery.html images="extraction-pipeline-flowchart.png" height="450" %}
+{% include image-gallery.html images="_projects/Flow Free/extraction-pipeline-flowchart.png" height="450" %}
 
 We also generated a synthetic dataset rather than manually collecting and labeling puzzle images — since these boards are generated in code, their solutions are already known, making them ideal for supervised learning. Applying variations in brightness and scaling further increased performance.
 
----
 # Solving with ML
 The model is a Convolutional Neural Network (CNN), which uses a series of layers to extract key features from the input board, then classifies the puzzle based on those features. Once trained, it uses the extracted features to solve an unfinished puzzle.
 
-Conversion to TensorFlow-compatible input:
+## Conversion to TensorFlow-compatible input:
 - The board is converted from a NumPy integer array to a float32 tensor
 - Reshaped to (1, 5, 5, 1) to match batch and channel dimensions
 - This tensor is the critical link between the OpenCV extraction pipeline and the TensorFlow model
+
+## Model architecture — MobileNetV2:
+Selected for its lightweight architecture, which pairs well with small grid-based inputs
+Takes the (1, 5, 5, 1) tensor as input, where each cell value represents a color (0 = empty, 1–5 = each color)
+Outputs a (5, 5) array representing the solved board
+
