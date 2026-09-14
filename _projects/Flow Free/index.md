@@ -7,7 +7,7 @@ skills:
 - OpenCV
 - TensorFlow
 - NumPy
-main-image: /extraction-pipeline-flowchart.png 
+main-image: /Flow Free Poster_page-0001.jpg
 ---
 
 ---
@@ -30,7 +30,7 @@ To train a model, we needed structured data extracted from puzzle images:
 - Each cell is converted to HSV color space and classified as an endpoint, a path, or empty
 - The result is compiled into a matrix representing the board's colors and states
   
-{% include image-gallery.html images="projects/Flow Free/extraction-pipeline-flowchart.png" height="450" %}
+{% include image-gallery.html images="/extraction-pipeline-flowchart.png" height="450" %}
 
 We also generated a synthetic dataset rather than manually collecting and labeling puzzle images — since these boards are generated in code, their solutions are already known, making them ideal for supervised learning. Applying variations in brightness and scaling further increased performance.
 
