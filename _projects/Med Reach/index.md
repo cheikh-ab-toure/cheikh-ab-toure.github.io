@@ -19,3 +19,16 @@ The name combines "Medical" and "Reach" — extending human precision and contro
 
 ## Problem statement: 
 Remotely control a robotic arm to position the arm's end effector within a simulation environment, using intuitive hand tracking instead of manual joint-by-joint input.
+{% include image-gallery.html images="control-panel-demo.png" height="450" %}
+
+# How it Works
+The app runs in-browser and offers two control modes:
+- IK (Mimic) Control — tracks and mirrors your hand movement directly; making a fist closes the gripper, opening your hand releases it.
+- Manual Joint Control — switches to precise, individual joint-by-joint control for fine adjustments.
+
+Hand tracking runs through the webcam feed, extracting finger and wrist position in real time, which then drives inverse kinematics to position the simulated arm's end effector.
+
+{% include image-gallery.html images="joint-motion-plot.png" height="400" %}
+
+# Telemetry & Recording
+Every session can be recorded — the app logs joint angles, end-effector position, and flex amount over time, then exports the data as CSV or JSON. Recorded motion can be reloaded and played back at adjustable speed, which made it possible to review and analyze full motion sequences after each demo rather than only observing live.
