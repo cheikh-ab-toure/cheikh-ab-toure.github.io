@@ -47,3 +47,8 @@ Selected for its lightweight architecture, which pairs well with small grid-base
 Takes the (1, 5, 5, 1) tensor as input, where each cell value represents a color (0 = empty, 1–5 = each color)
 Outputs a (5, 5) array representing the solved board
 
+# Presented At
+This work was presented as a research poster at the NC A&T Undergraduate Research Symposium, and builds on ongoing work in the ADEPT Lab: "WIP: Engaging the Next Generation of IC Designers with Puzzle-Solving Competitions," Limbrick, D., Garcia Suarez, L. M., & Cummings, D., Department of Electrical and Computer Engineering, NC A&T State University.
+
+### Team
+Madison Dupye, Malcolm Wyatt, Bryson Fields, Zachary Johnson, Omar Manning, Erin Gold, and Cheikh Toure, advised by Dr. Daniel Limbrick.
