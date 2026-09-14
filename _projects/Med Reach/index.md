@@ -8,7 +8,7 @@ skills:
 - Real-Time Control
 - Telemetry Systems
 - Human-Robot Interaction
-main-image: /Flow Free Poster_page-0001.jpg
+main-image: /medreach-logo.png
 ---
 
 ---
