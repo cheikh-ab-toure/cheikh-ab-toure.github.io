@@ -19,7 +19,7 @@ The name combines "Medical" and "Reach" — extending human precision and contro
 
 ## Problem statement: 
 Remotely control a robotic arm to position the arm's end effector within a simulation environment, using intuitive hand tracking instead of manual joint-by-joint input.
-{% include image-gallery.html images="control-panel-demo.png" height="450" %}
+{% include image-gallery.html images="control-panel-demo.png" height="400" %}
 
 # How it Works
 The app runs in-browser and offers two control modes:
