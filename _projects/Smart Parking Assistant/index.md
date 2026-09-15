@@ -46,9 +46,9 @@ Converting to the units the Arduino formula needs (cm/µs):
 The sensing range is divided into three proximity zones:
 
 | Zone | Condition | Green LED | Yellow LED | Red LED | Buzzer |
-|----------|----------|
-| Row 1, Col 1 | Row 1, Col 2 |
-| Row 2, Col 1 | Row 2, Col 2 |
+|----------|----------||----------|----------||----------|----------|
+| Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 1 | Row 1, Col 2 |
+| Row 2, Col 1 | Row 2, Col 2 | Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 1 | Row 1, Col 2 |
 
 # Error Analysis
 
