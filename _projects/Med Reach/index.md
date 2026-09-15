@@ -44,7 +44,7 @@ Since this was built with a healthcare/MedTech use case in mind, privacy was tre
 
 # Try It / Code
 The full working demo — including the hand-tracking control panel, IK/joint control modes, and recording system — is available here:
-
+[View the demo source](demo.html)
 
 # Team
 Built by the Coding Collective at NC A&T HackNat 9.0: Tori Tracey, Cheikh Toure, Aiden Thompson, and Alyssa Edwards.
