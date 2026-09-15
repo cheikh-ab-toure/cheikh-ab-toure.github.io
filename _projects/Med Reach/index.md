@@ -23,6 +23,7 @@ Remotely control a robotic arm to position the arm's end effector within a simul
 
 # How it Works
 The app runs in-browser and offers two control modes:
+
 - IK (Mimic) Control — tracks and mirrors your hand movement directly; making a fist closes the gripper, opening your hand releases it.
 - Manual Joint Control — switches to precise, individual joint-by-joint control for fine adjustments.
 
@@ -32,3 +33,14 @@ Hand tracking runs through the webcam feed, extracting finger and wrist position
 
 # Telemetry & Recording
 Every session can be recorded — the app logs joint angles, end-effector position, and flex amount over time, then exports the data as CSV or JSON. Recorded motion can be reloaded and played back at adjustable speed, which made it possible to review and analyze full motion sequences after each demo rather than only observing live.
+
+# Data Privacy
+Since this was built with a healthcare/MedTech use case in mind, privacy was treated as a first-class feature rather than an afterthought:
+
+- All hand-tracking and joint data processing happens locally on-device — no camera feed or personal data is ever uploaded to a server
+- Sessions use an anonymized, auto-generated ID rather than any personal identifier
+- Data auto-deletes after 7 days, and the user can export or delete their own data at any time
+- Designed with HIPAA-readiness, GDPR compliance, and ISO 13485 (medical device standards) in mind
+
+# Try It / Code
+The full working demo — including the hand-tracking control panel, IK/joint control modes, and recording system — is available here:
